@@ -37,6 +37,8 @@ function setDate() {
   hourHand.style.transform = `rotate(${hoursDegrees}deg)`;
   minuteHand.style.transform = `rotate(${minutesDegrees}deg)`;
   secondHand.style.transform = `rotate(${secondsDegrees}deg)`;
+
+  time.innerHTML = `${hours} : ${minutes} : ${seconds}`;
 }
 
 setInterval(setDate, 1000);
