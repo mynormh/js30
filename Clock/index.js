@@ -15,6 +15,25 @@ function setDate() {
   const minutesDegrees = calculateDegrees(minutes, 60);
   const secondsDegrees = calculateDegrees(seconds, 60);
 
+  //When a hand reaches 60, temporally disable transitions to avoid jump when it reaches 0deg and then transforms to 90deg
+  if (secondsDegrees === 90) {
+    secondHand.classList.add("disable-transition");
+  } else {
+    secondHand.classList.remove("disable-transition");
+  }
+
+  if (minutesDegrees === 90) {
+    minuteHand.classList.add("disable-transition");
+  } else {
+    minuteHand.classList.remove("disable-transition");
+  }
+
+  if (hoursDegrees === 90) {
+    hourHand.classList.add("disable-transition");
+  } else {
+    hourHand.classList.remove("disable-transition");
+  }
+
   hourHand.style.transform = `rotate(${hoursDegrees}deg)`;
   minuteHand.style.transform = `rotate(${minutesDegrees}deg)`;
   secondHand.style.transform = `rotate(${secondsDegrees}deg)`;
