@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Scoped CSS Variables and JS</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1><span class="highlight">JS</span> Image Editor</h1>
+
+    <div class="controls">
+      <label for="spacing">Spacing:</label
+      ><input
+        id="spacing"
+        name="spacing"
+        type="range"
+        min="10"
+        max="200"
+        value="10"
+        data-suffix="px"
+      />
+      <label for="blur">Blur:</label
+      ><input
+        id="blur"
+        name="blur"
+        type="range"
+        min="0"
+        max="25"
+        value="10"
+        data-suffix="px"
+      />
+      <label for="gray">Grayscale:</label
+      ><input
+        id="gray"
+        name="gray"
+        type="range"
+        min="0"
+        max="100"
+        value="10"
+        data-suffix="%"
+      />
+      <label for="contrast">Contrast:</label
+      ><input
+        id="contrast"
+        name="contrast"
+        type="range"
+        min="0"
+        max="200"
+        value="100"
+        data-suffix="%"
+      />
+      <label for="hue">Hue-Rotate:</label
+      ><input
+        id="hue"
+        name="hue"
+        type="range"
+        min="0"
+        max="359"
+        value="10"
+        data-suffix="deg"
+      />
+      <label for="base">Base Color:</label
+      ><input id="base" name="base" type="color" value="#ffc600" />
+
+      <img src="https://source.unsplash.com/7bwQXzbF6KE/800x500" />
+    </div>
+
+    <script src="index.js"></script>
+  </body>
+</html>
