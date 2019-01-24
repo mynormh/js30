@@ -17,7 +17,11 @@ html {
 }
 
 .controls {
-  margin-bottom: 50px;
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  margin: 20px auto;
 }
 
 input {
@@ -27,6 +31,7 @@ input {
 img {
   padding: var(--spacing);
   background: var(--base);
+  margin-bottom: 50px;
   filter: blur(var(--blur)) grayscale(var(--gray)) contrast(var(--contrast))
     hue-rotate(var(--hue));
 }
