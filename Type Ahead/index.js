@@ -9,8 +9,9 @@ fetch(endpoint)
 
 function findMatches(wordToMatch, cities) {
   return cities.filter(place => {
-    const regex = new RegExp(wordToMatch, "gi");
-    return place.city.match(regex) || place.state.match(regex);
+    return (
+      place.city.includes(wordToMatch) || place.state.includes(wordToMatch)
+    );
   });
 }
 
@@ -20,6 +21,7 @@ function numberWithCommas(x) {
 
 function displayMatches() {
   const matchArray = findMatches(this.value, cities);
+  console.table(matchArray);
   const html = matchArray
     .map(place => {
       const regex = new RegExp(this.value, "gi");
