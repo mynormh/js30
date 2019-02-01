@@ -44,11 +44,17 @@ canvas.addEventListener("mousedown", e => {
 });
 canvas.addEventListener("mouseup", () => (isDrawing = false));
 canvas.addEventListener("mouseout", () => (isDrawing = false));
-composite.addEventListener("change", () => {
+
+function changeComposite() {
   if (composite.options[composite.selectedIndex].value === "none") {
     context.globalCompositeOperation = "source-over";
   } else {
     context.globalCompositeOperation =
       composite.options[composite.selectedIndex].value;
   }
-});
+}
+
+function clearCanvas() {
+  console.log("clear");
+  context.clearRect(0, 0, canvas.width, canvas.height);
+}

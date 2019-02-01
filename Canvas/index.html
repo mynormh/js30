@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <select name="composite" id="composite">
+    <select name="composite" id="composite" onchange="changeComposite()">
       <option value="none" selected>-- Select Composite --</option>
       <option value="multiply">Multiply</option>
       <option value="source-in">Source-in</option>
@@ -19,6 +19,7 @@
       <option value="exclusion">Exclusion</option>
       <option value="luminosity">Luminosity</option>
     </select>
+    <button onclick="clearCanvas()">Clear</button>
     <canvas id="draw" width="800" height="800"></canvas>
     <script src="index.js"></script>
   </body>
