@@ -1,5 +1,6 @@
 const canvas = document.querySelector("#draw");
 const context = canvas.getContext("2d");
+const composite = document.querySelector("#composite");
 
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
@@ -8,6 +9,7 @@ context.strokeStyle = "#BADA55";
 context.lineJoin = "round";
 context.lineCap = "round";
 context.lineWidth = 100;
+context.globalCompositeOperation = "";
 
 let isDrawing = false;
 let lastX = 0;
@@ -17,7 +19,6 @@ let direction = true;
 
 function draw(e) {
   if (!isDrawing) return;
-  console.log(e);
   context.strokeStyle = `hsl(${hue}, 100%, 50%)`;
   context.beginPath();
   context.moveTo(lastX, lastY);
@@ -43,3 +44,11 @@ canvas.addEventListener("mousedown", e => {
 });
 canvas.addEventListener("mouseup", () => (isDrawing = false));
 canvas.addEventListener("mouseout", () => (isDrawing = false));
+composite.addEventListener("change", () => {
+  if (composite.options[composite.selectedIndex].value === "none") {
+    context.globalCompositeOperation = "source-over";
+  } else {
+    context.globalCompositeOperation =
+      composite.options[composite.selectedIndex].value;
+  }
+});

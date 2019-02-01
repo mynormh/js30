@@ -8,6 +8,17 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <select name="composite" id="composite">
+      <option value="none" selected>-- Select Composite --</option>
+      <option value="multiply">Multiply</option>
+      <option value="source-in">Source-in</option>
+      <option value="source-out">Source-out</option>
+      <option value="copy">Copy</option>
+      <option value="xor">XOR</option>
+      <option value="color-dodge">Color-dodge</option>
+      <option value="exclusion">Exclusion</option>
+      <option value="luminosity">Luminosity</option>
+    </select>
     <canvas id="draw" width="800" height="800"></canvas>
     <script src="index.js"></script>
   </body>
