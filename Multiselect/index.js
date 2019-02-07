@@ -13,11 +13,9 @@ function handleCheck(e) {
       if (inBetween) {
         checkbox.checked = true;
       }
-      console.log(checkbox);
     });
   }
   firstChecked = this;
-  console.log(firstChecked);
 }
 
 checkboxes.forEach(checkbox => checkbox.addEventListener("click", handleCheck));
