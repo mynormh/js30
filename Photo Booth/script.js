@@ -3,6 +3,7 @@ const canvas = document.querySelector(".photo");
 const context = canvas.getContext("2d");
 const strip = document.querySelector(".strip");
 const snap = document.querySelector(".snap");
+const effect = document.querySelector("#effect");
 
 function getVideo() {
   navigator.mediaDevices
@@ -25,8 +26,24 @@ function paintToCanvas() {
   setInterval(() => {
     context.drawImage(video, 0, 0, width, height);
     let pixels = context.getImageData(0, 0, width, height);
-    pixels = greenScreen(pixels);
-    // context.globalAlpha = 0.1; // Adds a ghosting effect
+    let chosenEffect = effect.options[effect.selectedIndex].value;
+    context.globalAlpha = 1;
+    if (chosenEffect === "redEffect") {
+      pixels = redEffect(pixels);
+      context.globalAlpha = 1;
+    } else if (chosenEffect === "rgbSplit") {
+      pixels = rgbSplit(pixels);
+      context.globalAlpha = 1;
+    } else if (chosenEffect === "greenScreen") {
+      pixels = greenScreen(pixels);
+      context.globalAlpha = 1;
+    } else if (chosenEffect === "ghosting") {
+      context.globalAlpha = 0.1;
+    } else {
+      pixels = pixels;
+      context.globalAlpha = 1;
+    }
+
     context.putImageData(pixels, 0, 0);
   }, 16);
 }

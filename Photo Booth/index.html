@@ -11,6 +11,13 @@
     <div class="photobooth">
       <div class="controls">
         <button onClick="takePhoto()">Take Photo</button>
+        <select name="effect" id="effect">
+          <option value="none">None</option>
+          <option value="redEffect">Red Effect</option>
+          <option value="rgbSplit">RGB Split</option>
+          <option value="greenScreen">Green Screen</option>
+          <option value="ghosting">Ghosting</option>
+        </select>
         <div class="rgb">
           <label for="rmin">Red Min:</label>
           <input type="range" min="0" max="255" name="rmin" />
