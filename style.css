@@ -1,0 +1,46 @@
+html {
+  background: #1c3d5a;
+  color: white;
+  font-family: "helvetica neue";
+  text-align: center;
+}
+
+.projects {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+}
+
+.projects a {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: start;
+  border: 1px solid white;
+  background: white;
+  padding: 10px;
+  text-decoration: none;
+  margin-top: 20px;
+  border-radius: 10px;
+  flex-basis: 30%;
+}
+
+.projects img {
+  width: 40px;
+  height: 40px;
+  border: 0.5px solid #f1f5f8;
+}
+
+.description {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: flex-start;
+  margin-left: 10px;
+}
+
+.description h2 {
+  margin: 0px;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  hyphens: auto;
+}
